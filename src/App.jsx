@@ -1,135 +1,119 @@
-import { useMemo, useState } from "react";
-import { dadosFrame } from "./data/frameData";
+import { useState } from "react";
 import "./App.css";
 
+import { andy } from "./data/personagens/andy";
+//import { big } from "./data/personagens/big";
+import { billy } from "./data/personagens/billy";
+import { chunli } from "./data/personagens/chunli";
+import { cr7 } from "./data/personagens/cr7";
+import { gato } from "./data/personagens/gato";
+//import { geese } from "./data/personagens/geese";
+//import { hokutomaru } from "./data/personagens/hokutomaru";
+//import { hotaru } from "./data/personagens/hotaru";
+import { jenet } from "./data/personagens/jenet";
+//import { joe } from "./data/personagens/joe";
+//import { kain } from "./data/personagens/kain";
+//import { ken } from "./data/personagens/ken";
+//import { kevin } from "./data/personagens/kevin";
+//import { kimdong } from "./data/personagens/kimdong";
+//import { kimjae } from "./data/personagens/kimjae";
+//import { krauser } from "./data/personagens/krauser";
+//import { mai } from "./data/personagens/mai";
+//import { marco } from "./data/personagens/marco";
+import { mary } from "./data/personagens/mary";
+//import { mr } from "./data/personagens/mr";
+//import { preecha } from "./data/personagens/preecha";
+//import { rock } from "./data/personagens/rock";
+//import { salvatore } from "./data/personagens/salvatore";
+//import { terry } from "./data/personagens/terry";
+//import { tizoc } from "./data/personagens/tizoc";
+//import { vox } from "./data/personagens/vox";
 
+const personagens = [
+  andy,
+  //big,
+  billy,
+  chunli,
+  cr7,
+  gato,
+  //geese,
+  //hokutomaru,
+  //hotaru,
+  jenet,
+  //joe,
+  //kain,
+  //ken,
+  //kevin,
+  //kimdong,
+  //kimjae,
+  //krauser,
+  //mai,
+  //marco,
+  mary,
+  //mr,
+  //preecha,
+  //rock,
+  //salvatore,
+  //terry,
+  //tizoc,
+  //vox,
+];
 
-  return (
-    <main className="app">
-      <header className="barra-topo">
-        <div>
-          <p className="texto-pequeno">Fatal Fury: City of the Wolves</p>
-          <h1>Frame Data</h1>
-        </div>
-
-        <div className="patch">Patch {dadosFrame.patch}</div>
-      </header>
-
-      <section className="layout">
-        <aside className="menu-personagens">
-          <h2>Personagens</h2>
-
-          <div className="lista-personagens">
-            {dadosFrame.personagens.map((personagem) => (
-              <button
-                key={personagem.id}
-                className={
-                  personagem.id === personagemSelecionadoId
-                    ? "botao-personagem ativo"
-                    : "botao-personagem"
-                }
-                onClick={() => {
-                  setPersonagemSelecionadoId(personagem.id);
-                  setBusca("");
-                  setCategoria("Todas");
-                }}
-              >
-                <span>{personagem.nome}</span>
-                <small>{personagem.estilo}</small>
-              </button>
-            ))}
-          </div>
-        </aside>
-
-        <section className="conteudo">
-          <div className="cabecalho-personagem">
-            <div>
-              <p className="texto-pequeno">Personagem</p>
-              <h2>{personagemSelecionado?.nome}</h2>
-            </div>
-
-            <div className="ferramentas">
-              <input
-                type="text"
-                placeholder="Buscar golpe ou comando..."
-                value={busca}
-                onChange={(event) => setBusca(event.target.value)}
-              />
-
-              <select
-                value={categoria}
-                onChange={(event) => setCategoria(event.target.value)}
-              >
-                {categorias.map((item) => (
-                  <option key={item} value={item}>
-                    {item === "Todas" ? "Todas categorias" : item}
-                  </option>
-                ))}
-              </select>
-            </div>
-          </div>
-
-          <div className="area-tabela">
-            <table>
-              <thead>
-                <tr>
-                  <th>Golpe</th>
-                  <th>Comando</th>
-                  <th>Tipo</th>
-                  <th>Startup</th>
-                  <th>Active</th>
-                  <th>Recovery</th>
-                  <th>Hit</th>
-                  <th>Block</th>
-                  <th>Observacoes</th>
-                </tr>
-              </thead>
-
-              <tbody>
-                {golpesFiltrados.map((golpe) => (
-                  <tr key={`${personagemSelecionado.id}-${golpe.nome}`}>
-                    <td className="nome-golpe">{golpe.nome}</td>
-                    <td>{golpe.comando}</td>
-                    <td>{golpe.categoria}</td>
-                    <td>{golpe.startup}</td>
-                    <td>{golpe.active}</td>
-                    <td>{golpe.recovery}</td>
-                    <td className={verClasseVantagem(golpe.vantagemHit)}>
-                      {golpe.vantagemHit}
-                    </td>
-                    <td className={verClasseVantagem(golpe.vantagemBlock)}>
-                      {golpe.vantagemBlock}
-                    </td>
-                    <td>{golpe.observacoes}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-
-            {golpesFiltrados.length === 0 && (
-              <p className="mensagem-vazia">Nenhum golpe encontrado.</p>
-            )}
-          </div>
-        </section>
-      </section>
-    </main>
+function App() {
+  const [personagemId, setPersonagemId] = useState(
+    personagens[0].id
   );
 
+  const personagem = personagens.find(
+    (p) => p.id === personagemId
+  );
 
-function verClasseVantagem(valor) {
-  if (typeof valor !== "string") return "";
+  return (
+    <div>
+      <h1>Frame Data Fatal Fury</h1>
 
-  if (valor.startsWith("+")) return "positivo";
+      <select
+        value={personagemId}
+        onChange={(e) => setPersonagemId(e.target.value)}
+      >
+        {personagens.map((p) => (
+          <option key={p.id} value={p.id}>
+            {p.nome}
+          </option>
+        ))}
+      </select>
 
-  if (valor.startsWith("-")) {
-    const numero = Number(valor);
+      <h2>{personagem.nome}</h2>
 
-    if (numero <= -10) return "muito-negativo";
+      <table border="1">
+        <thead>
+          <tr>
+            <th>Golpe</th>
+            <th>Comando</th>
+            <th>Startup</th>
+            <th>Active</th>
+            <th>Recovery</th>
+            <th>Hit</th>
+            <th>Block</th>
+          </tr>
+        </thead>
 
-    return "negativo";
-  }
-
-  return "";
+        <tbody>
+          {personagem.golpes.map((golpe) => (
+            <tr key={golpe.nome}>
+              <td>{golpe.nome}</td>
+              <td>{golpe.comando}</td>
+              <td>{golpe.startup}</td>
+              <td>{golpe.active}</td>
+              <td>{golpe.recovery}</td>
+              <td>{golpe.vantagemHit}</td>
+              <td>{golpe.vantagemBlock}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  );
 }
 
 export default App;
