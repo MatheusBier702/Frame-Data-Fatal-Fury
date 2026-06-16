@@ -1,16 +1,54 @@
-# React + Vite
+# Frame Data Viewer 🥊
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 📌 Sobre o projeto
 
-Currently, two official plugins are available:
+Este é um projeto pessoal desenvolvido com foco em estudo e prática de desenvolvimento de sistemas, aplicado ao contexto de jogos de luta.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+O objetivo principal é organizar e visualizar frame data de personagens de forma clara, facilitando análise de golpes e compreensão de mecânicas como startup, active frames, recovery e frame advantage.
 
-## React Compiler
+O projeto não possui finalidade comercial e está sendo desenvolvido exclusivamente para uso pessoal, aprendizado e experimentação de ideias de programação.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 🎯 Objetivo
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Criar uma ferramenta simples e eficiente para consulta de frame data, ajudando no estudo de jogos de luta e na evolução como jogador e desenvolvedor.
+
+---
+
+## ⚙️ Status
+
+Projeto em desenvolvimento contínuo, com melhorias e ajustes frequentes conforme necessidade.
+
+---
+
+## 💡 Decisões técnicas
+
+Os dados dos personagens são mantidos localmente em arquivos organizados por personagem, com centralização de importação.
+
+Essa abordagem foi escolhida para manter simplicidade no desenvolvimento, facilitar alterações rápidas e evitar complexidade desnecessária no estágio atual do projeto.
+
+---
+
+## 🚀 Futuras melhorias
+
+- Sistema de busca de personagens  
+- Filtros por tipo de golpe  
+- Comparação entre personagens  
+- Interface mais visual e interativa  
+- Possível refatoração de arquitetura caso o projeto evolua  
+
+---
+
+## 💻 Linguagens utilizadas
+
+- HTML  
+- CSS  
+- JavaScript  
+- React 
+
+---
+
+## 📄 Observações
+
+Projeto pessoal, sem intenção de uso comercial ou distribuição como produto.
