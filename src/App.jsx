@@ -2,61 +2,61 @@ import { useState } from "react";
 import "./App.css";
 
 import { andy } from "./data/personagens/andy";
-//import { big } from "./data/personagens/big";
+import { mrBig } from "./data/personagens/big";
 import { billy } from "./data/personagens/billy";
 import { chunli } from "./data/personagens/chunli";
 import { cr7 } from "./data/personagens/cr7";
 import { gato } from "./data/personagens/gato";
-//import { geese } from "./data/personagens/geese";
-//import { hokutomaru } from "./data/personagens/hokutomaru";
-//import { hotaru } from "./data/personagens/hotaru";
+import { geese } from "./data/personagens/geese";
+import { hokutomaru } from "./data/personagens/hokutomaru";
+import { hotaru } from "./data/personagens/hotaru";
 import { jenet } from "./data/personagens/jenet";
-//import { joe } from "./data/personagens/joe";
-//import { kain } from "./data/personagens/kain";
-//import { ken } from "./data/personagens/ken";
-//import { kevin } from "./data/personagens/kevin";
-//import { kimdong } from "./data/personagens/kimdong";
-//import { kimjae } from "./data/personagens/kimjae";
-//import { krauser } from "./data/personagens/krauser";
-//import { mai } from "./data/personagens/mai";
-//import { marco } from "./data/personagens/marco";
+import { joe } from "./data/personagens/joe";
+import { kain } from "./data/personagens/kain";
+import { ken } from "./data/personagens/ken";
+import { kevin } from "./data/personagens/kevin";
+import { donghwan } from "./data/personagens/kimdong";
+import { jaehoon } from "./data/personagens/kimjae";
+import { krauser } from "./data/personagens/krauser";
+import { mai } from "./data/personagens/mai";
+import { marco } from "./data/personagens/marco";
 import { mary } from "./data/personagens/mary";
-//import { mr } from "./data/personagens/mr";
-//import { preecha } from "./data/personagens/preecha";
-//import { rock } from "./data/personagens/rock";
-//import { salvatore } from "./data/personagens/salvatore";
-//import { terry } from "./data/personagens/terry";
-//import { tizoc } from "./data/personagens/tizoc";
-//import { vox } from "./data/personagens/vox";
+import { mr } from "./data/personagens/mr";
+import { preecha } from "./data/personagens/preecha";
+import { rock } from "./data/personagens/rock";
+import { salvatore } from "./data/personagens/salvatore";
+import { terry } from "./data/personagens/terry";
+import { tizoc } from "./data/personagens/tizoc";
+import { vox } from "./data/personagens/vox";
 
 const personagens = [
   andy,
-  //big,
+  mrBig,
   billy,
   chunli,
   cr7,
   gato,
-  //geese,
-  //hokutomaru,
-  //hotaru,
+  geese,
+  hokutomaru,
+  hotaru,
   jenet,
-  //joe,
-  //kain,
-  //ken,
-  //kevin,
-  //kimdong,
-  //kimjae,
-  //krauser,
-  //mai,
-  //marco,
+  joe,
+  kain,
+  ken,
+  kevin,
+  donghwan,
+  jaehoon,
+  krauser,
+  mai,
+  marco,
   mary,
-  //mr,
-  //preecha,
-  //rock,
-  //salvatore,
-  //terry,
-  //tizoc,
-  //vox,
+  mr,
+  preecha,
+  rock,
+  salvatore,
+  terry,
+  tizoc,
+  vox,
 ];
 
 function App() {
