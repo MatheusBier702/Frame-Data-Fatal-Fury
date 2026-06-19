@@ -1,5 +1,7 @@
+import { useState } from "react";
 import "./App.css";
 
+// seus imports dos personagens
 import { andy } from "./data/personagens/andy";
 import { mrBig } from "./data/personagens/big";
 import { billy } from "./data/personagens/billy";
@@ -28,6 +30,7 @@ import { terry } from "./data/personagens/terry";
 import { tizoc } from "./data/personagens/tizoc";
 import { vox } from "./data/personagens/vox";
 
+// imagens
 import imgAndy from "./assets/andy.png";
 import imgBig from "./assets/big.png";
 import imgBilly from "./assets/billy.png";
@@ -85,12 +88,62 @@ const personagens = [
   { ...vox, imagem: imgVox },
 ];
 
-function App() {
+export default function App() {
+  const [personagemSelecionado, setPersonagemSelecionado] =
+    useState(null);
+
+  if (personagemSelecionado) {
+    return (
+      <div className="pagina-frames">
+        <button
+          className="botao-voltar"
+          onClick={() =>
+            setPersonagemSelecionado(null)
+          }
+        >
+          ← Voltar
+        </button>
+
+        <h1>{personagemSelecionado.nome}</h1>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Golpe</th>
+              <th>Comando</th>
+              <th>Startup</th>
+              <th>Active</th>
+              <th>Recovery</th>
+              <th>Hit</th>
+              <th>Block</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            {personagemSelecionado.golpes?.map(
+              (golpe) => (
+                <tr key={golpe.nome}>
+                  <td>{golpe.nome}</td>
+                  <td>{golpe.comando}</td>
+                  <td>{golpe.startup}</td>
+                  <td>{golpe.active}</td>
+                  <td>{golpe.recovery}</td>
+                  <td>{golpe.vantagemHit}</td>
+                  <td>{golpe.vantagemBlock}</td>
+                </tr>
+              )
+            )}
+          </tbody>
+        </table>
+      </div>
+    );
+  }
+
   return (
     <div className="pagina-inicial">
       <header className="cabecalho">
         <h1>Fatal Fury Frame Data</h1>
-        <p>Escolha um personagem</p>
+        <p>Escolha seu personagem</p>
       </header>
 
       <section className="grade-personagens">
@@ -98,6 +151,9 @@ function App() {
           <div
             key={personagem.id}
             className="cartao-personagem"
+            onClick={() =>
+              setPersonagemSelecionado(personagem)
+            }
           >
             <div className="imagem-personagem">
               <img
@@ -115,5 +171,3 @@ function App() {
     </div>
   );
 }
-
-export default App;

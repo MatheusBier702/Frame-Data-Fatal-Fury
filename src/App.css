@@ -1,56 +1,134 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background:
+    radial-gradient(circle at top,
+    #1f1f1f,
+    #0d0d0d);
+
+  color: white;
+  font-family: Arial, sans-serif;
+}
+
 .pagina-inicial {
   min-height: 100vh;
-  padding: 30px;
+  padding: 40px;
 }
 
 .cabecalho {
   text-align: center;
-  margin-bottom: 40px;
+  margin-bottom: 50px;
 }
 
 .cabecalho h1 {
-  font-size: 3rem;
+  font-size: 4rem;
+
+  background: linear-gradient(
+    90deg,
+    #ff3d3d,
+    #ffcc00
+  );
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .cabecalho p {
-  color: #999;
+  margin-top: 10px;
+  color: #bdbdbd;
 }
 
 .grade-personagens {
   display: grid;
-  grid-template-columns: repeat(
-    auto-fill,
-    minmax(220px, 1fr)
-  );
+  grid-template-columns:
+    repeat(auto-fill, minmax(230px, 1fr));
+
   gap: 24px;
 }
 
 .cartao-personagem {
-  background: #1b1b1b;
-  border: 1px solid #333;
-  border-radius: 16px;
+  background: #181818;
+
+  border: 2px solid #333;
+
+  border-radius: 18px;
+
   overflow: hidden;
+
   cursor: pointer;
-  transition: 0.2s;
+
+  transition: 0.25s;
 }
 
 .cartao-personagem:hover {
-  transform: translateY(-6px);
-  border-color: #ff4444;
+  transform:
+    translateY(-8px)
+    scale(1.03);
+
+  border-color: #ff4d4d;
+
+  box-shadow:
+    0 0 25px rgba(255, 0, 0, .35);
 }
 
 .imagem-personagem {
-  height: 280px;
-  overflow: hidden;
+  height: 320px;
 }
 
 .imagem-personagem img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+
+  transition: .3s;
+}
+
+.cartao-personagem:hover img {
+  transform: scale(1.08);
 }
 
 .informacoes-personagem {
-  padding: 15px;
+  padding: 16px;
+  text-align: center;
+}
+
+.pagina-frames {
+  padding: 30px;
+}
+
+.botao-voltar {
+  padding: 12px 18px;
+
+  border: none;
+
+  border-radius: 8px;
+
+  background: #ff4444;
+
+  color: white;
+
+  cursor: pointer;
+
+  margin-bottom: 20px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+th {
+  background: #222;
+}
+
+th,
+td {
+  border: 1px solid #444;
+  padding: 12px;
   text-align: center;
 }
