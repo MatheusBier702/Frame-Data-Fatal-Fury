@@ -1,4 +1,3 @@
-import { useState } from "react";
 import "./App.css";
 
 import { andy } from "./data/personagens/andy";
@@ -29,89 +28,90 @@ import { terry } from "./data/personagens/terry";
 import { tizoc } from "./data/personagens/tizoc";
 import { vox } from "./data/personagens/vox";
 
+import imgAndy from "./assets/andy.png";
+import imgBig from "./assets/big.png";
+import imgBilly from "./assets/billy.png";
+import imgChunli from "./assets/chunli.png";
+import imgCr7 from "./assets/cr7.png";
+import imgGato from "./assets/gato.png";
+import imgGeese from "./assets/geese.png";
+import imgHokutomaru from "./assets/hokutomaru.png";
+import imgHotaru from "./assets/hotaru.png";
+import imgJenet from "./assets/jenet.png";
+import imgJoe from "./assets/joe.png";
+import imgKain from "./assets/kain.png";
+import imgKen from "./assets/ken.png";
+import imgKevin from "./assets/kevin.png";
+import imgKimdong from "./assets/kimdong.png";
+import imgKimjae from "./assets/kimjae.png";
+import imgKrauser from "./assets/krauser.png";
+import imgMai from "./assets/mai.png";
+import imgMarco from "./assets/marco.png";
+import imgMary from "./assets/mary.png";
+import imgPreecha from "./assets/preecha.png";
+import imgRock from "./assets/rock.png";
+import imgSalvatore from "./assets/salvatore.png";
+import imgTerry from "./assets/terry.png";
+import imgTizoc from "./assets/tizoc.png";
+import imgVox from "./assets/vox.png";
+
 const personagens = [
-  andy,
-  mrBig,
-  billy,
-  chunli,
-  cr7,
-  gato,
-  geese,
-  hokutomaru,
-  hotaru,
-  jenet,
-  joe,
-  kain,
-  ken,
-  kevin,
-  donghwan,
-  jaehoon,
-  krauser,
-  mai,
-  marco,
-  mary,
-  mr,
-  preecha,
-  rock,
-  salvatore,
-  terry,
-  tizoc,
-  vox,
+  { ...andy, imagem: imgAndy },
+  { ...mrBig, imagem: imgBig },
+  { ...billy, imagem: imgBilly },
+  { ...chunli, imagem: imgChunli },
+  { ...cr7, imagem: imgCr7 },
+  { ...gato, imagem: imgGato },
+  { ...geese, imagem: imgGeese },
+  { ...hokutomaru, imagem: imgHokutomaru },
+  { ...hotaru, imagem: imgHotaru },
+  { ...jenet, imagem: imgJenet },
+  { ...joe, imagem: imgJoe },
+  { ...kain, imagem: imgKain },
+  { ...ken, imagem: imgKen },
+  { ...kevin, imagem: imgKevin },
+  { ...donghwan, imagem: imgKimdong },
+  { ...jaehoon, imagem: imgKimjae },
+  { ...krauser, imagem: imgKrauser },
+  { ...mai, imagem: imgMai },
+  { ...marco, imagem: imgMarco },
+  { ...mary, imagem: imgMary },
+  { ...mr, imagem: null },
+  { ...preecha, imagem: imgPreecha },
+  { ...rock, imagem: imgRock },
+  { ...salvatore, imagem: imgSalvatore },
+  { ...terry, imagem: imgTerry },
+  { ...tizoc, imagem: imgTizoc },
+  { ...vox, imagem: imgVox },
 ];
 
 function App() {
-  const [personagemId, setPersonagemId] = useState(
-    personagens[0].id
-  );
-
-  const personagem = personagens.find(
-    (p) => p.id === personagemId
-  );
-
   return (
-    <div>
-      <h1>Frame Data Fatal Fury</h1>
+    <div className="pagina-inicial">
+      <header className="cabecalho">
+        <h1>Fatal Fury Frame Data</h1>
+        <p>Escolha um personagem</p>
+      </header>
 
-      <select
-        value={personagemId}
-        onChange={(e) => setPersonagemId(e.target.value)}
-      >
-        {personagens.map((p) => (
-          <option key={p.id} value={p.id}>
-            {p.nome}
-          </option>
+      <section className="grade-personagens">
+        {personagens.map((personagem) => (
+          <div
+            key={personagem.id}
+            className="cartao-personagem"
+          >
+            <div className="imagem-personagem">
+              <img
+                src={personagem.imagem}
+                alt={personagem.nome}
+              />
+            </div>
+
+            <div className="informacoes-personagem">
+              <h2>{personagem.nome}</h2>
+            </div>
+          </div>
         ))}
-      </select>
-
-      <h2>{personagem.nome}</h2>
-
-      <table border="1">
-        <thead>
-          <tr>
-            <th>Golpe</th>
-            <th>Comando</th>
-            <th>Startup</th>
-            <th>Active</th>
-            <th>Recovery</th>
-            <th>Hit</th>
-            <th>Block</th>
-          </tr>
-        </thead>
-
-        <tbody>
-          {personagem.golpes.map((golpe) => (
-            <tr key={golpe.nome}>
-              <td>{golpe.nome}</td>
-              <td>{golpe.comando}</td>
-              <td>{golpe.startup}</td>
-              <td>{golpe.active}</td>
-              <td>{golpe.recovery}</td>
-              <td>{golpe.vantagemHit}</td>
-              <td>{golpe.vantagemBlock}</td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
+      </section>
     </div>
   );
 }
