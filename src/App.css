@@ -82,9 +82,7 @@ body {
 .imagem-personagem img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
-
-  transition: .3s;
+  object-fit: contain;
 }
 
 .cartao-personagem:hover img {
