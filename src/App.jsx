@@ -58,6 +58,8 @@ import imgTerry from "./assets/terry.png";
 import imgTizoc from "./assets/tizoc.png";
 import imgVox from "./assets/vox.png";
 
+
+
 const personagens = [
   { ...andy, imagem: imgAndy },
   { ...mrBig, imagem: imgBig },
@@ -91,8 +93,17 @@ const personagens = [
 export default function App() {
   const [personagemSelecionado, setPersonagemSelecionado] =
     useState(null);
+  
+    const [pesquisa, setPesquisa] = useState("");
+    const personagensFiltrados = personagens.filter(
+  (personagem) =>
+    personagem.nome
+      .toLowerCase()
+      .includes(pesquisa.toLowerCase())
+);
 
-  if (personagemSelecionado) {
+    if (personagemSelecionado) {
+   
     return (
       <div className="pagina-frames">
         <button
@@ -145,9 +156,18 @@ export default function App() {
         <h1>Fatal Fury Frame Data</h1>
         <p>Escolha seu personagem</p>
       </header>
-
+      <div className="area-pesquisa">
+  <input
+    type="text"
+    placeholder="Pesquisar personagem..."
+    value={pesquisa}
+    onChange={(e) =>
+      setPesquisa(e.target.value)
+    }
+  />
+</div>
       <section className="grade-personagens">
-        {personagens.map((personagem) => (
+        {personagensFiltrados.map((personagem) => (
           <div
             key={personagem.id}
             className="cartao-personagem"
