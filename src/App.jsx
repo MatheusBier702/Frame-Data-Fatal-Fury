@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./App.css";
 
-// seus imports dos personagens
+
 import { andy } from "./data/personagens/andy";
 import { mrBig } from "./data/personagens/big";
 import { billy } from "./data/personagens/billy";
@@ -30,7 +30,7 @@ import { terry } from "./data/personagens/terry";
 import { tizoc } from "./data/personagens/tizoc";
 import { vox } from "./data/personagens/vox";
 
-// imagens
+
 import imgAndy from "./assets/andy.png";
 import imgBig from "./assets/big.png";
 import imgBilly from "./assets/billy.png";
@@ -57,6 +57,7 @@ import imgSalvatore from "./assets/salvatore.png";
 import imgTerry from "./assets/terry.png";
 import imgTizoc from "./assets/tizoc.png";
 import imgVox from "./assets/vox.png";
+import imgMr from "./assets/mr.png";
 
 
 
@@ -81,7 +82,7 @@ const personagens = [
   { ...mai, imagem: imgMai },
   { ...marco, imagem: imgMarco },
   { ...mary, imagem: imgMary },
-  { ...mr, imagem: null },
+  { ...mr, imagem: imgMr },
   { ...preecha, imagem: imgPreecha },
   { ...rock, imagem: imgRock },
   { ...salvatore, imagem: imgSalvatore },
