@@ -52,3 +52,6 @@ Essa abordagem foi escolhida para manter simplicidade no desenvolvimento, facili
 ## 📄 Observações
 
 Projeto pessoal, sem intenção de uso comercial ou distribuição como produto.
+
+
+#FINALIZADO.
