@@ -30,7 +30,7 @@ Essa abordagem foi escolhida para manter simplicidade no desenvolvimento, facili
 
 ---
 
-## 🚀 Futuras melhorias
+## 🚀 Futuras melhorias (Talvez)
 
 - Sistema de busca de personagens  
 - Filtros por tipo de golpe  
